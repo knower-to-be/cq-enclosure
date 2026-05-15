@@ -1,0 +1,21 @@
+[project]
+name = "enclosure"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cadquery>=2.7.0",
+    "heatserts",
+    "hypothesis>=6.152.7",
+    "pytest>=9.0.3",
+    "svgelements>=1.9.6",
+]
+
+[tool.uv.sources]
+heatserts = { git = "https://github.com/CadQuery/cadquery-plugins.git", subdirectory = "plugins/heatserts" }
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::DeprecationWarning:ezdxf.*",
+]
